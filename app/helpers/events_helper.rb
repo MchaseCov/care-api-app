@@ -10,9 +10,8 @@ module EventsHelper
   end
 
   def event_location(activity_location)
-    return unless activity_location
-    return if activity_location['hidden'] == 'true'
-    return 'N/A' if activity_location['location']['city'].nil?
+    return 'Unavailable' if activity_location.nil? || activity_location['location']['city'].nil?
+    return 'Hidden' if activity_location['hidden'] == 'true'
 
     "#{activity_location['location']['city']}, #{activity_location['location']['state']}"
   end

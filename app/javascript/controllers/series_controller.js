@@ -2,16 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="series"
 export default class extends Controller {
-  static targets = [ "toggle", "sessionsBox" ]
+  static targets = [ "sessionsBox" ]
 
 
-  showSessions(element){
-    console.log(element)
-    if(this.sessionsBoxTarget.classList.contains("hidden")){
-      this.toggleTarget.innerHTML = "Hide Sessions For This Series"
-    } else {
-      this.toggleTarget.innerHTML = "View Sessions For This Series"
-    }
+  showSessions(event){
+    event.target.innerHTML = (this.sessionsBoxTarget.classList.contains("hidden") ? "Hide Sessions For This Series" : "View Sessions For This Series")
     this.sessionsBoxTarget.classList.toggle("hidden")
   }
 }

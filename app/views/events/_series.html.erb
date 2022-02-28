@@ -9,7 +9,7 @@
       <p><%=event_location(series["activity_location"])%></p>
       <div class="row">
         <%=link_to "View on Care.com!", "https://getgalore-staging.com/series/#{series["id"]}", class:"button", target: :_blank %>
-        <p data-action="click->series#showSessions" data-series-target="toggle" class="button">View Sessions For This Series</p>
+        <p data-action="click->series#showSessions" class="button">View Sessions For This Series</p>
       </div>
     </div>
   </div>
