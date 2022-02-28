@@ -1,0 +1,21 @@
+<div data-controller="series" class="event-box">
+  <div>
+    <div>
+      <p class="title"><%=series["title"]%></p>
+      <p class="description">About: <%=series["about"]%></p>
+    </div>
+    <div>
+      <p><%="#{number_to_currency(series["price_integer"].to_f / 100, unit: series["currency"])} "%></p>
+      <p><%=event_location(series["activity_location"])%></p>
+      <div class="row">
+        <%=link_to "View on Care.com!", "https://getgalore-staging.com/series/#{series["id"]}", class:"button", target: :_blank %>
+        <p data-action="click->series#showSessions" data-series-target="toggle" class="button">View Sessions For This Series</p>
+      </div>
+    </div>
+  </div>
+  <%= turbo_frame_tag :sessions, loading: :lazy, class:"hidden", 'data-series-target': "sessionsBox" do %>
+    <div class="sessions">
+      <%= render partial: "series_sessions", collection: series["sessions"], as: :session%>
+    </div>
+  <% end %>
+</div>
