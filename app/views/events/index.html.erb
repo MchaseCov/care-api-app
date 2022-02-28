@@ -1,17 +1,19 @@
 <h1>Upcoming Care Events!</h1>
-<h2>Upcoming Series</h2>
-<div id="series">
+<article id="series">
+  <h2>Upcoming Series</h2>
   <%=render partial: 'series', collection: @series%>
-</div>
-<h2>Upcoming Activities</h2>
-<table id="activities">
-  <tr>
-    <th>Title</th>
-    <th>About</th>
-    <th>Price</th>
-    <th>Time</th>
-    <th>Location</th>
-    <th>Link</th>
-  </tr>
-  <%=render partial: 'activities', collection: @activities%>
-</table>
+</article>
+<article>
+  <h2>Upcoming Activities</h2>
+  <table id="activities">
+    <tr>
+      <th>Title</th>
+      <th>About</th>
+      <th>Price</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th>Link</th>
+    </tr>
+    <%=render partial: 'activities', collection: @activities%>
+  </table>
+</article>
