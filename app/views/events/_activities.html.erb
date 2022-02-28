@@ -1,0 +1,8 @@
+<tr>
+  <td><%=activities["title"]%></td>
+  <td><%=activities["about"]%></td>
+  <td><%="#{number_to_currency(activities["price_integer"].to_f / 100, unit: activities["currency"])} "%></td>
+  <td><%=event_time(activities["start_time"], activities["end_time"])%></td>
+  <td><%=event_location(activities["activity_location"])%></td>
+  <td><%=link_to  "View on Care.com!", "https://getgalore-staging.com/activities/#{activities["id"]}" %></td>
+</tr>
